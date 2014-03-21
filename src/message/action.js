@@ -905,6 +905,18 @@ function QueueLog() {
 	QueueLog.super_.call(this, 'QueueLog');
 }
 
+/**
+ * Agi Action.
+ * @constructor
+ * @see Action(String)
+ * @property {String} Command Command
+ * @property {String} Channel Channel
+ * @augments Action
+ */
+function Agi() {
+        Agi.super_.call(this, 'AGI');
+}
+
 
 // Inheritance for this module
 util.inherits(Action, message.Message);
@@ -975,7 +987,8 @@ util.inherits(Action, message.Message);
         QueueRemove,
         QueueRule,
         QueueAdd,
-        QueueLog
+        QueueLog,
+        Agi
     ];
     for (i in actions) {
         util.inherits(actions[i], Action);
